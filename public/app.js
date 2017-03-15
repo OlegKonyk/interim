@@ -24,12 +24,16 @@ app.component('singlePost', {
             bindings: {},
             templateUrl: 'front/singlePost.html',
             controller: function($window, $interval, $timeout, $location) {
+                var ctrl = this;
                 var mode = $location.search().mode;
                 if (mode == 'r') {
-                    var code = $location.search().code;
+                    ctrl.code = $location.search().code;
                     $timeout(()=>{
-                        $window.location.href = `https://www.lyft.com/invite/${code}?route_key=invite&v=OUT`;
+                        $window.location.href = 'https://www.amazon.com/exec/obidos/ASIN/'+ctrl.code;
                     })
+                }
+                if (!ctrl.code) {
+                    ctrl.code = 1593275994;
                 }
             }
 })
