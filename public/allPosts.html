@@ -3,7 +3,34 @@
         <div>
             <div class="posts">
                 <h1 class="content-subhead">Recent Posts</h1>
-                <section class="post">
+                <section ng-repeat="(postRoute,postData) in $ctrl.allPosts" class="post">
+                    <header class="post-header">
+                        <img width="48" height="48" class="post-avatar" ng-src="front/img/{{postData.avatar}}">
+
+                        <h2 class="post-title"><a ng-href="/posts/{{postData.path}}">{{postData.title}}</a></h2>
+
+                        <p class="post-meta">
+                            By <span class="post-author">John Doe</span> | Mar 14, 2017
+                        </p>
+                    </header>
+                    <div class="post-description">
+                        <div class="post-images pure-g">
+                            <div class="pure-u-1">
+                                <a ng-href="/posts/learn-python">
+                                    <img class="pure-img-responsive"
+                                        ng-src="front/img/{{postData.hero}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-description">
+                        <dynamic-element ng-repeat="elementObj in postData.body" element="elementObj.element" text='elementObj.text'></dynamic-element>
+                        <p>
+                            <a ng-href="/posts/learn-python">Read more...</a>
+                        </p>
+                    </div>
+                </section>
+                <!--<section class="post">
                     <header class="post-header">
                         <img width="48" height="48" alt="Reid Burke&#x27;s avatar" class="post-avatar" src="front/img/common/reid-avatar.png">
 
@@ -34,7 +61,7 @@
                             <a href="/posts/learn-python">Read more...</a>
                         </p>
                     </div>
-                </section>
+                </section>-->
             </div>
 
             <div class="footer">

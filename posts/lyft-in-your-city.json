@@ -1,0 +1,22 @@
+{
+    "path": "lyft-in-your-city",
+    "title": "Lyft in your city!",
+    "hero": "lyft-credit.png",
+    "avatar": "avatar.png",
+    "author": "John Doe",
+    "posted": "Mar 14, 2017",
+    "body": [
+        {
+            "element": "p",
+            "text": "If you haven’t already used Lyft, now is a great time to try it out. Public transportation in most cities in the United States is notoriously terrible: Lyft is the solution. Instead of waiting for a bus or spending a small fortune on a taxi, a Lyft driver can pick you up at your location for a very reasonable fare."
+        },
+        {
+            "element": "h2",
+            "text": "What Is Lyft?"
+        },
+        {
+            "element": "p",
+            "text": "Lyft is an app-based transportation service that was founded in 2012 that provides people around the U.S. with safe, cheap rides. Local drivers, usually with their own car, join Lyft after completing an application and vetting process. Whenever you need a ride, you can open the app to request a ride from your area. Then a nearby driver will accept the ride and come to you."
+        }
+    ]
+}
