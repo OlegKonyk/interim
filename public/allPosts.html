@@ -16,7 +16,7 @@
                     <div class="post-description">
                         <div class="post-images pure-g">
                             <div class="pure-u-1">
-                                <a ng-href="/posts/learn-python">
+                                <a ng-href="/posts/{{postData.path}}">
                                     <img class="pure-img-responsive"
                                         ng-src="front/img/{{postData.hero}}">
                                 </a>
@@ -24,44 +24,13 @@
                         </div>
                     </div>
                     <div class="post-description">
-                        <dynamic-element ng-repeat="elementObj in postData.body" element="elementObj.element" text='elementObj.text'></dynamic-element>
+                        <!--<dynamic-element ng-repeat="elementObj in postData.body" element="elementObj.element" text='elementObj.text'></dynamic-element>-->
+                        <dynamic-element element="postData.body[0].element" text='postData.body[0].text'></dynamic-element>
                         <p>
-                            <a ng-href="/posts/learn-python">Read more...</a>
+                            <a ng-href="/posts/{{postData.path}}">Read more...</a>
                         </p>
                     </div>
                 </section>
-                <!--<section class="post">
-                    <header class="post-header">
-                        <img width="48" height="48" alt="Reid Burke&#x27;s avatar" class="post-avatar" src="front/img/common/reid-avatar.png">
-
-                        <h2 class="post-title"><a href="/posts/learn-python">10 Resources to Get Started Learning Python</a></h2>
-
-                        <p class="post-meta">
-                            By <span class="post-author">John Doe</span> | Mar 14, 2017
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <div class="post-images pure-g">
-                            <div class="pure-u-1">
-                                <a href="/posts/learn-python">
-                                    <img alt="Photo of someone working poolside at a resort"
-                                        class="pure-img-responsive"
-                                        src="front/img/common/_1.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post-description">
-                        <p>
-                            This list includes courses, books (both digital and physical), and tools/utilities you can use to take your first step with the Python programming language. These resources are a combination of free and paid tutorials. Most of the paid lessons include a set of sample exercises you can use to get a taste of the quality of the content.
-                        </p>
-                        <p>
-                            <a href="/posts/learn-python">Read more...</a>
-                        </p>
-                    </div>
-                </section>-->
             </div>
 
             <div class="footer">

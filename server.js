@@ -27,10 +27,11 @@ function readFiles(dirname, onFileContent, onError) {
   });
 }
 
-const data = {};
+app.locals.postData = {};
+
 readFiles(path.join(__dirname, 'posts'), function(filename, content) {
     try { 
-        data[filename.replace('.json', '')] = JSON.parse(content);
+        app.locals.postData[filename.replace('.json', '')] = JSON.parse(content);
     } catch (err) {
         console.log(filename, err);
     }
@@ -40,11 +41,17 @@ readFiles(path.join(__dirname, 'posts'), function(filename, content) {
 
 
 app.use(morgan('tiny'));
+
 router.get('/front/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', req.params[0]));
 });
-router.get('/api/postList', function(req, res) {
-  res.send(data);
+
+router.get('/api/all', function(req, res) {
+  res.send(app.locals.postData);
+});
+
+router.get('/api/posts/:name', function(req, res) {
+  res.send(app.locals.postData[req.params.name]);
 });
 
 

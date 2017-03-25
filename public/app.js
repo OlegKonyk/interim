@@ -6,7 +6,7 @@ app.config(function($locationProvider, $routeProvider){
         .when("/", {
             template : "<all-posts></all-posts>"
         })
-        .when("/posts/:postName", {
+        .when("/posts/:name", {
             template : "<single-post></single-post>"
         })
         .otherwise({
@@ -19,7 +19,8 @@ app.service('postService', function tcSpecsService($resource, $q){
     var allPosts;
     var deferred = $q.defer();
 
-    var allPostSrc = $resource('/api/postList', {});
+    var allPostSrc = $resource('/api/posts/all', {});
+    var singlePostSrc = $resource('/api/posts/:name', {name:'@name'});
 
     function getAllPosts() {
         if (!allPosts) {
@@ -29,12 +30,14 @@ app.service('postService', function tcSpecsService($resource, $q){
                     return allPosts;
                 })
         } else {
-            return deferred.resolve(allPosts);
+            return $q(function(resolve, reject) { resolve(allPosts) });
         }
         
     }
 
-    return { allPostSrc: allPostSrc, getAllPosts: getAllPosts };
+    
+
+    return { allPostSrc: allPostSrc, getAllPosts: getAllPosts, singlePostSrc: singlePostSrc };
 
 });
 
@@ -79,14 +82,21 @@ app.component('allPosts', {
 app.component('singlePost', {
             bindings: {},
             templateUrl: 'front/singlePost.html',
-            controller: function($window, $interval, $timeout, $location, $http) {
+            controller: function($window, $interval, $timeout, $location, $http, postService, $routeParams) {
                 var ctrl = this;
+                
+
+                postService.singlePostSrc
+                    .get({name: $routeParams.name})
+                    .$promise
+                    .then(function(data){
+                        console.log('|||||', data)
+                    })
+
                 var mode = $location.search().mode;
                 if (mode == 'r') {
                     ctrl.code = $location.search().code;
-                    $timeout(()=>{
-                        $window.location.href = 'https://www.amazon.com/exec/obidos/ASIN/'+ctrl.code;
-                    })
+                    $window.location.href = 'https://www.amazon.com/exec/obidos/ASIN/'+ctrl.code;
                 }
                 if (!ctrl.code) {
                     ctrl.code = 1593275994;
