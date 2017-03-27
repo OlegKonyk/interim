@@ -1,0 +1,36 @@
+{
+    "path": "ride-whenever-you-need",
+    "title": "Ride whenever you need one",
+    "subtitle": "Lyft it up!",
+    "hero": "ride-whenever-you-need.png",
+    "avatar": "avatar.png",
+    "author": "John Doe",
+    "posted": "Mar 14, 2017",
+    "imgs": [
+        "ride-whenever-you-need_1.jpeg",
+        "ride-whenever-you-need_2.jpeg",
+        "ride-whenever-you-need_3.jpeg"
+    ],
+    "body": [
+        {
+            "element": "p",
+            "text": "It appears to be that 2017 has already all the digital solution for every problems we have. On the other hand, several people assume that these apps are only here to entertain us where in fact, they could also be used on being efficient with our daily activities. So, with this in mind, you might as well find an app that will help you get you through the day."
+        },
+        {
+            "element": "p",
+            "text": ""
+        },
+        {
+            "element": "p",
+            "text": ""
+        },
+        {
+            "element": "h2",
+            "text": ""
+        },
+        {
+            "element": "p",
+            "text": ""
+        }
+    ]
+}

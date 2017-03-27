@@ -89,8 +89,8 @@ app.component('singlePost', {
                 postService.singlePostSrc
                     .get({name: $routeParams.name})
                     .$promise
-                    .then(function(data){
-                        console.log('|||||', data)
+                    .then(function(singlePostData){
+                        ctrl.singlePostData = singlePostData;
                     })
 
                 var mode = $location.search().mode;

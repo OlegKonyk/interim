@@ -46,7 +46,7 @@ router.get('/front/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', req.params[0]));
 });
 
-router.get('/api/all', function(req, res) {
+router.get('/api/posts/all', function(req, res) {
   res.send(app.locals.postData);
 });
 

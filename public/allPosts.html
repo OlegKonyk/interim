@@ -24,7 +24,6 @@
                         </div>
                     </div>
                     <div class="post-description">
-                        <!--<dynamic-element ng-repeat="elementObj in postData.body" element="elementObj.element" text='elementObj.text'></dynamic-element>-->
                         <dynamic-element element="postData.body[0].element" text='postData.body[0].text'></dynamic-element>
                         <p>
                             <a ng-href="/posts/{{postData.path}}">Read more...</a>

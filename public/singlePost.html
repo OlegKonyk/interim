@@ -1,30 +1,32 @@
 <div id="single-post-layout">
-
+<!--{{$ctrl.singlePostData}}-->
 
     <div id="single-post-main">
         <div class="single-post-header">
-            <h1>10 Resources to Get Started Learning Python</h1>
-            <h2>or just click to buy some books on Amazon</h2>
+        <h1>{{$ctrl.singlePostData.title}}</h1>
+            <h2>{{$ctrl.singlePostData.subtitle}}</h2>
         </div>
         <div class="single-post-content">
-            <h2 class="single-post-content-subhead">Automate the Boring Stuff with Python</h2>
+            
+            <div class="pure-g" style="margin: 15px 0px 15px 0px; ">
+                <div class="pure-u-1-3">
+                    <img class="pure-img-responsive" ng-src="front/img/{{$ctrl.singlePostData.imgs[0]}}">
+                </div>
+                <div class="pure-u-1-3">
+                    <img class="pure-img-responsive" ng-src="front/img/{{$ctrl.singlePostData.imgs[1]}}">
+                </div>
+                <div class="pure-u-1-3">
+                    <img class="pure-img-responsive" ng-src="front/img/{{$ctrl.singlePostData.imgs[2]}}">
+                </div>
+            </div>
+
+            <dynamic-element ng-repeat="elementObj in $ctrl.singlePostData.body" element="elementObj.element" text='elementObj.text'></dynamic-element>
+
+            <!--<h2 class="single-post-content-subhead">Automate the Boring Stuff with Python</h2>
 
             <section>
                 Last month I discussed why you should learn the Python programming language. Today I’m going to show you how to learn Python using ten of my favorite resources.            
             </section>
-
-            <div class="pure-g" style="margin: 15px 0px 15px 0px; ">
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="front/img/common/1.png">
-                </div>
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="front/img/common/2.jpg">
-                </div>
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="front/img/common/3.jpg">
-                </div>
-
-            </div>
             
             <section>
                 This list includes courses, books (both digital and physical), and tools/utilities you can use to take your first step with the Python programming language. These resources are a combination of free and paid tutorials. Most of the paid lessons include a set of sample exercises you can use to get a taste of the quality of the content.
@@ -48,7 +50,7 @@
 
             <section>
                 Last month I shared seven reasons from my personal experience why you should learn the Python programming language. My goal here today was to help provide a list of resources that you can use on your own Python programming journey.
-            </section>
+            </section>-->
 
         </div>
     </div>
