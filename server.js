@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const app = express();
 const path = require('path');
+const config = require('./config.json');
 const router = express.Router();
 const morgan = require('morgan');
 
@@ -27,11 +28,14 @@ function readFiles(dirname, onFileContent, onError) {
   });
 }
 
-app.locals.postData = {};
+app.locals.blogData = {
+  postData: {},
+  config: config
+};
 
 readFiles(path.join(__dirname, 'posts'), function(filename, content) {
     try { 
-        app.locals.postData[filename.replace('.json', '')] = JSON.parse(content);
+        app.locals.blogData.postData[filename.replace('.json', '')] = JSON.parse(content);
     } catch (err) {
         console.log(filename, err);
     }
@@ -47,21 +51,17 @@ router.get('/front/*', function(req, res) {
 });
 
 router.get('/api/posts/all', function(req, res) {
-  res.send(app.locals.postData);
+  res.send(app.locals.blogData);
 });
 
 router.get('/api/posts/:name', function(req, res) {
-  res.send(app.locals.postData[req.params.name]);
+  res.send(app.locals.blogData.postData[req.params.name]);
 });
 
-
-//router.get('*', express.static(__dirname + '/public/index.html'));
 app.use('/', router)
 app.use('*', function(req, res){
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
-
-
 
 var port = process.env.PORT || 3012;
 

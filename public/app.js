@@ -34,9 +34,6 @@ app.service('postService', function tcSpecsService($resource, $q){
         }
         
     }
-
-    
-
     return { allPostSrc: allPostSrc, getAllPosts: getAllPosts, singlePostSrc: singlePostSrc };
 
 });
@@ -46,24 +43,25 @@ app.directive('dynamicElement', ['$compile', function ($compile) {
         restrict: 'E', 
         scope: {
             text: "=",
-            element: "="
+            element: "=",
+            dynamicUrl: "@"
         },
         replace: true,
         link: function(scope, element, attrs) {
-            // var template = $compile(scope.message)(scope);
             var template = $compile(['<',scope.element,'>',scope.text,'</',scope.element,'>'].join(''))(scope);
             console.log(scope.element, scope.text)
             element.replaceWith(template);               
-        }/*,
-        controller: ['$scope', function($scope) {
-           $scope.clickMe = function(){
-                alert("hi")
-           };
-        }]*/
+        }
       }
 }]);
 
-
+app.controller('config', function(postService) {
+                var ctrl = this; 
+                postService.getAllPosts()
+                    .then(function(blogData){
+                        ctrl.blogConfig = blogData.config;
+                    })
+            });
 
 app.component('allPosts', {
             bindings: {},
@@ -71,10 +69,8 @@ app.component('allPosts', {
             controller: function(postService) {
                 var ctrl = this; 
                 postService.getAllPosts()
-                    .then(function(allPosts){
-                        ctrl.allPosts = allPosts;
-                        //ctrl.htmlString = "<h1>DYNAMIC TITLE</h1>"
-                        console.log('|||||', ctrl.allPosts)
+                    .then(function(blogData){
+                        ctrl.allPosts = blogData.postData;
                     })
             }
 })
@@ -84,22 +80,22 @@ app.component('singlePost', {
             templateUrl: 'front/singlePost.html',
             controller: function($window, $interval, $timeout, $location, $http, postService, $routeParams) {
                 var ctrl = this;
-                
-
                 postService.singlePostSrc
                     .get({name: $routeParams.name})
                     .$promise
                     .then(function(singlePostData){
                         ctrl.singlePostData = singlePostData;
                     })
-
-                var mode = $location.search().mode;
-                if (mode == 'r') {
-                    ctrl.code = $location.search().code;
-                    $window.location.href = 'https://www.amazon.com/exec/obidos/ASIN/'+ctrl.code;
-                }
-                if (!ctrl.code) {
-                    ctrl.code = 1593275994;
-                }
+                    .then(postService.getAllPosts)
+                    .then(function(blogData){
+                        var mode = $location.search().mode;
+                        if (mode == 'r') {
+                            ctrl.code = $location.search().code;
+                            $window.location.href = `${blogData.config.baseRedirect}${ctrl.code}?route_key=invite&v=OUT`;
+                        }
+                        if (!ctrl.code) {
+                            ctrl.dynamicUrl = blogData.config.defaultRedirect;
+                        }
+                    })
             }
 })

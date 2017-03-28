@@ -7,9 +7,9 @@
     "author": "John Doe",
     "posted": "Mar 14, 2017",
     "imgs": [
-        "ride-whenever-you-need_1.jpeg",
-        "ride-whenever-you-need_2.jpeg",
-        "ride-whenever-you-need_3.jpeg"
+        "lyft-credit_2.jpeg",
+        "lyft-credit_1.jpg",
+        "lyft-in-your-city_3.jpeg"
     ],
     "body": [
         {
@@ -18,19 +18,19 @@
         },
         {
             "element": "p",
-            "text": ""
-        },
-        {
-            "element": "p",
-            "text": ""
+            "text": "Do you need a ride that can bring you to your destination without giving you any hassle? Worry no more because Lyft is here to help you. In case you are not familiar, Lyft is a transportation network company which is based in San Francisco California and operates on more than 3oo cities around US. It operates, markets, and develops the Lyft software app that allows the clients in requesting transportation via Lyft mobile app. This lets drivers in earning income from transporting passengers to delivering passengers. One of the good things of downloading Lyft is that Lyft is available to 300 cities in the US."
         },
         {
             "element": "h2",
-            "text": ""
+            "text": "How Lyft Works"
         },
         {
             "element": "p",
-            "text": ""
+            "text": "Riders need to download the Lyft app to their Android or iOS based phone, sign up, then enter their valid phone number, and specify a valid form of payment which can either be a credit card or a link to PayPal account or Google Wallet. After this, the passenger can now for a nearby driver. When it’s already confirmed, the app will show the name of the driver including the ratings by the previous passengers and his picture including a photo of his car. Both the passengers and drivers can also add personal information on their profiles about their music preference, hometown, or other preference as a way of encouraging the passengers and drivers in conversing during the ride. When the passenger already reached his desired destination, he is given a chance to offer a gratuity to his driver that is also billed to his payment method."
+        },
+        {
+            "element": "p",
+            "text": "Another great thing about Lyft is that it is 100% safe because safety is their top priority. Lyft also runs an extensive and detailed background checks for all the applicant drivers providing up to $1M automobile liability policy, and has designed several safety features into their mobile app. Passengers need to give a valid phone or credit card number for identity verification. After the ride is done, both of the driver and the passenger is going to rate each other and those drivers who have a low rating by the users will automatically dropped off from their service."
         }
     ]
 }

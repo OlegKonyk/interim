@@ -1,6 +1,6 @@
 {
     "path": "lyft-credit",
-    "title": "Get $20 in Lyft Credit!",
+    "title": "Get $50 in Lyft Credit!",
     "subtitle": "For a Limited Time Only!",
     "hero": "lyft-credit.png",
     "avatar": "avatar.png",
@@ -62,7 +62,7 @@
         },
         {
             "element": "p",
-            "text": "Right now, if you register for Lyft and download the app, you can get $20 in credit to use on your first rides. Who wouldn’t love a free ride?"
+            "text": "Right now, if you register for Lyft and download the app, you can <a ng-href='{{dynamicUrl}}'>get $50 in credit</a> to use on your first rides. Who wouldn’t love a free ride?"
         }
     ]
 }
