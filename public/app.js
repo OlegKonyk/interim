@@ -49,7 +49,6 @@ app.directive('dynamicElement', ['$compile', function ($compile) {
         replace: true,
         link: function(scope, element, attrs) {
             var template = $compile(['<',scope.element,'>',scope.text,'</',scope.element,'>'].join(''))(scope);
-            console.log(scope.element, scope.text)
             element.replaceWith(template);               
         }
       }
