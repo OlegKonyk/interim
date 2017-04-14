@@ -1,11 +1,11 @@
 {
     "path": "lyft-in-your-city",
-    "title": "Lyft in your city!",
-    "subtitle": "Get a ride today",
-    "hero": "lyft-in-your-city.png",
+    "title": "Cupon just for you!",
+    "subtitle": "For a Limited Time Only!",
+    "hero": "lyft-in-your-city.jpg",
     "avatar": "avatar.png",
-    "author": "John Doe",
-    "posted": "Mar 14, 2017",
+    "author": "Oleg K.",
+    "posted": "April 07, 2017",
     "imgs": [
         "lyft-in-your-city_1.jpeg",
         "lyft-in-your-city_2.jpeg",
@@ -55,6 +55,14 @@
         {
             "element": "p",
             "text": "So if you are in pursuit of superlative and safe services, then you are warmly welcome to join the Lyft family."
+        },
+        {
+            "element": "h2",
+            "text": "Can I Try It Out?"
+        },
+        {
+            "element": "p",
+            "text": "Right now, if you register for Lyft and download the app, you can <a ng-href='{{dynamicUrl}}'>get $50 in credit</a> to use on your first rides. Who wouldn’t love a free ride?"
         }
     ]
 }

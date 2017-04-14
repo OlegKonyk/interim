@@ -28,13 +28,14 @@ h3 {
 }
 
 .header {
-    text-align: center;
+    text-align: left;
+    padding: 0px 30px;
     top: auto;
-    margin: 3em auto;
+    margin: 2em auto;
 }
 
 .sidebar {
-    background: rgb(61, 79, 93);
+    background: #3949AB;
     color: #fff;
 }
 
@@ -86,7 +87,7 @@ h3 {
 }
 
 .content {
-    padding: 2em 1em 0;
+    padding: 1em 1em 0;
 }
 
 .post {
@@ -173,7 +174,7 @@ h3 {
 }
 
 
-@media (min-width: 48em) {
+/*@media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;
         margin-left: 25%;
@@ -193,4 +194,4 @@ h3 {
     .footer {
         text-align: center;
     }
-}
+}*/

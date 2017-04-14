@@ -1,11 +1,11 @@
 {
     "path": "lyft-credit",
-    "title": "Get $50 in Lyft Credit!",
-    "subtitle": "For a Limited Time Only!",
-    "hero": "lyft-credit.png",
+    "title": "Ride it when you need it",
+    "subtitle": "Now in your city!",
+    "hero": "lyft-credit.jpg",
     "avatar": "avatar.png",
-    "author": "John Doe",
-    "posted": "Mar 14, 2017",
+    "author": "Oleg K.",
+    "posted": "April 02, 2017",
     "imgs": [
         "lyft-credit_1.jpg",
         "lyft-credit_2.jpeg",
@@ -55,14 +55,6 @@
         {
             "element": "p",
             "text": "Lyft rates vary by city and time of day, but rates are almost always significantly cheaper than a taxi. To give an example, for a 10-mile drive in San Franciso, you might pay about $23. If you’re looking for a ride during a prime time, which might cost more, the Lyft app will alert you."
-        },
-        {
-            "element": "h2",
-            "text": "Can I Try It Out?"
-        },
-        {
-            "element": "p",
-            "text": "Right now, if you register for Lyft and download the app, you can <a ng-href='{{dynamicUrl}}'>get $50 in credit</a> to use on your first rides. Who wouldn’t love a free ride?"
         }
     ]
 }
